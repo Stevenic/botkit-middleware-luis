@@ -51,6 +51,7 @@ function receive(options) {
                 } catch (e) {
                     console.error(err.toString());
                 }
+                next();
             });
         } else {
             next();
