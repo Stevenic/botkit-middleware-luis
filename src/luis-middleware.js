@@ -2,12 +2,13 @@ var request = require('request');
 
 module.exports = {
     middleware: {
-        receive: luisReceive,
-        heres: luisHere
+        receive: receive,
+        hereIntent: hereIntent,
+        hereAction: 
     }
 };
 
-function luisReceive(options) {
+function receive(options) {
     if (!options || !options.serviceUri) { 
         throw new Error('No LUIS service url specified.'); 
     }
@@ -41,6 +42,7 @@ function luisReceive(options) {
                                 (!message.topIntent || intent.score > message.topIntent.score)) {
                                 message.topIntent = intent;
                                 message.entities = result.entities || [];
+                                message.action = intent.actions && intent.actions[0].triggered ? intent.actions[0] : null;
                             }
                         } 
                     } else {
@@ -56,12 +58,26 @@ function luisReceive(options) {
     };
 }
 
-function luisHeres() {
+function hereIntent() {
     return function (tests, message) {
         if (message.topIntent) {
             var intent = message.topIntent.intent.toLowerCase();
             for (var i = 0; i < tests.length; i++) {
                 if (tests[i].trim().toLowerCase() == intent) {
+                    return true;
+                }
+            }
+        }
+        return false;    
+    };
+}
+
+function hereAction() {
+    return function (tests, message) {
+        if (message.action) {
+            var action = message.action.name.toLowerCase();
+            for (var i = 0; i < tests.length; i++) {
+                if (tests[i].trim().toLowerCase() == action) {
                     return true;
                 }
             }
