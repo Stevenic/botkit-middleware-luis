@@ -4,7 +4,7 @@ module.exports = {
     middleware: {
         receive: receive,
         hereIntent: hereIntent,
-        hereAction: 
+        hereAction: hereAction
     }
 };
 
