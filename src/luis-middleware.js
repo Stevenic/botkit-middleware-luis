@@ -49,7 +49,7 @@ function receive(options) {
                        console.error(err.toString());
                     }
                 } catch (e) {
-                    console.error(err.toString());
+                    console.error(e.toString());
                 }
                 next();
             });
