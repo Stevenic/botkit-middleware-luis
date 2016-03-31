@@ -1,0 +1,27 @@
+{
+  "name": "botkit-middleware-luis",
+  "version": "1.0.0",
+  "description": "Middleware for using http://luis.ai with Botkit-powered bots",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Stevenic/botkit-middleware-luis.git"
+  },
+  "keywords": [
+    "botkit",
+    "luis",
+    "slack"
+  ],
+  "author": "Steven Ickman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Stevenic/botkit-middleware-luis/issues"
+  },
+  "homepage": "https://github.com/Stevenic/botkit-middleware-luis#readme",
+  "dependencies": {
+    "request": "^2.69.0"
+  }
+}
