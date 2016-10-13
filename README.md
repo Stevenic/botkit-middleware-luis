@@ -13,7 +13,7 @@ Once your application is deployed and traffic starts to flow into the system, LU
 Go to [Luis.ai](http://luis.ai) and log in with your microsoft account :
 
 <p align="center">
-    ![Luis My Applications](images/home.png)
+    <img src="images/home.png"/>
 </p>
 
 ### Creating an Application
@@ -21,7 +21,7 @@ Go to [Luis.ai](http://luis.ai) and log in with your microsoft account :
 The first step to using [Luis](http://luis.ai) is to create an application. In the application, you will bundle together the intents and entities that are important to your task.
 
 <p align="center">
-    ![Luis My Applications](images/createApp.png)
+    <img src="images/createApp.png"/>
 </p>
 
 From your app's settings page, snag the service url. You will need this to use Luis's API.
