@@ -71,30 +71,26 @@ function receive(options) {
     };
 }
 
-function hereIntent() {
-    return function (tests, message) {
-        if (message.topIntent) {
-            var intent = message.topIntent.intent.toLowerCase();
-            for (var i = 0; i < tests.length; i++) {
-                if (tests[i].trim().toLowerCase() == intent) {
-                    return true;
-                }
+function hereIntent(tests, message) {
+    if (message.topIntent) {
+        var intent = message.topIntent.intent.toLowerCase();
+        for (var i = 0; i < tests.length; i++) {
+            if (tests[i].trim().toLowerCase() == intent) {
+                return true;
             }
         }
-        return false;    
-    };
+    }
+    return false;
 }
 
-function hereAction() {
-    return function (tests, message) {
-        if (message.action) {
-            var action = message.action.name.toLowerCase();
-            for (var i = 0; i < tests.length; i++) {
-                if (tests[i].trim().toLowerCase() == action) {
-                    return true;
-                }
+function hereAction(tests, message) {
+    if (message.action) {
+        var action = message.action.name.toLowerCase();
+        for (var i = 0; i < tests.length; i++) {
+            if (tests[i].trim().toLowerCase() == action) {
+                return true;
             }
         }
-        return false;    
-    };
+    }
+    return false;
 }
